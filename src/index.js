@@ -4,12 +4,14 @@ import { Provider } from 'react-redux'
 
 import store from './_store/app.store'
 
+import App from './app/App'
+
 import './_styles/normalize.css'
 
 
 ReactDOM.render(
   <Provider store={store}>
-    <h1>Hello H2O</h1>
+    <App />
   </Provider>,
   document.getElementById('root'),
 )

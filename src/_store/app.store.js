@@ -2,6 +2,8 @@ import { createLogger } from 'redux-logger'
 import { createStore, applyMiddleware } from 'redux'
 
 import appReducer from './app.reducer'
+import createInitialStore
+  from '../_data/createInitialStore'
 
 
 const logger = createLogger({
@@ -11,6 +13,6 @@ const logger = createLogger({
 
 export default createStore(
   appReducer,
-  undefined,
+  createInitialStore(),
   applyMiddleware(logger)
 )

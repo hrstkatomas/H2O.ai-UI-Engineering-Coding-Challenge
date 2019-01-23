@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "webpack-dev-server --mode development --config webpack.config.dev.js --color --open",
     "build": "webpack --mode production",
-    "documentation": "documentation build src/index.js -f md  > documentation.md"
+    "test": "jest",
+    "test-watch": "jest --watch"
   },
   "repository": {
     "type": "git",
