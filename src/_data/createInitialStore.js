@@ -10,11 +10,5 @@ export default function createInitialStore() {
     { allIds: [], byId: {} }
   )
 
-  return {
-    app: {
-      editing:  false,
-      selected: null
-    },
-    users
-  }
+  return { users }
 }
