@@ -25,7 +25,9 @@ export default function users(state = defaultState, action) {
       // id of new record would be normally provided by backend
       // I would extract it like so:
       // const { value: {id, userDetails} } = action
-      const id = Math.max(...allIds) + 1
+      const id = allIds.length
+        ? Math.max(...allIds) + 1
+        : 1
 
       return {
         ...state,

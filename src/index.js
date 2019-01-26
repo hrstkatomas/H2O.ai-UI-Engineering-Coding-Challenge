@@ -7,6 +7,7 @@ import store from './_store/app.store'
 import App from './app/App'
 
 import './_styles/normalize.css'
+import './_styles/fonts.scss'
 
 
 ReactDOM.render(

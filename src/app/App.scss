@@ -1,8 +1,8 @@
 .grid {
-  display: grid;
-  grid-template-columns: 20%  80%;
+  position: fixed;
+  top: 0;
+  bottom: 0;
 
-  >div {
-    padding: 1em;
-  }
+  display: grid;
+  grid-template-columns: minmax(200px, 20%) minmax(400px, 80%);
 }
