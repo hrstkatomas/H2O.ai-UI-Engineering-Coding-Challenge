@@ -51,7 +51,7 @@ class Contacts extends Component {
   }
 }
 
-const getInitial = ({ lastName }) => lastName[0]
+const getInitial = ({ lastName }) => lastName[0].toUpperCase()
 
 const mapStateToProps = state => {
   const { users: { byId } } = state

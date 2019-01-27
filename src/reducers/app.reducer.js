@@ -4,8 +4,11 @@ import {
   SELECT_USER
 } from '../actions/app.actions'
 
-import { REMOVE_USER }
-  from '../actions/users.actions'
+import {
+  REMOVE_USER,
+  ADD_USER,
+  UPDATE_USER
+} from '../actions/users.actions'
 
 const defaultState = {
   selected: null,
@@ -40,6 +43,14 @@ export default function app(state = defaultState, action) {
       return {
         ...state,
         selected: null,
+        editing:  false
+      }
+
+    case UPDATE_USER:
+    case ADD_USER:
+      return {
+        ...state,
+        selected: action.id,
         editing:  false
       }
 

@@ -18,6 +18,7 @@ describe('users reducer', () => {
   })
 
   const user1 = {
+    id:        1,
     firstName: 'Evanne',
     lastName:  'Clifford',
     email:     'eclifford0@hhs.gov',
@@ -27,6 +28,7 @@ describe('users reducer', () => {
   }
 
   const user2 = {
+    id:        2,
     firstName: 'Doyle',
     lastName:  'Bunston',
     email:     'dbunston1@vimeo.com',
@@ -43,6 +45,7 @@ describe('users reducer', () => {
       },
       {
         type:  ADD_USER,
+        id:    1,
         value: user1
       }
     )).toEqual(
@@ -63,6 +66,7 @@ describe('users reducer', () => {
       },
       {
         type:  ADD_USER,
+        id:    2,
         value: user2
       }
     )).toEqual(
@@ -82,6 +86,7 @@ describe('users reducer', () => {
         byId: {
           1: user1,
           2: {
+            id:        2,
             firstName: 'Karlos',
             lastName:  'Maras'
           }
@@ -101,6 +106,7 @@ describe('users reducer', () => {
         byId: {
           1: user1,
           2: {
+            id:        2,
             firstName: 'Carl',
             lastName:  'Markos'
           }

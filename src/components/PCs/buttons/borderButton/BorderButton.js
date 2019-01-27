@@ -6,11 +6,17 @@ import Button from '../button/Button'
 import styles from './BorderedButton.scss'
 
 
-export default function BorderedButton(props) {
+export default function BorderedButton({
+  className,
+  ...other
+}) {
   return (
     <Button
-      className={styles.borderedButton}
-      {...props}
+      className={`
+        ${styles.borderedButton}
+        ${className}
+      `}
+      {...other}
     />
   )
 }
@@ -20,5 +26,6 @@ BorderedButton.propTypes = {
     PropTypes.arrayOf(PropTypes.node),
     PropTypes.node
   ]).isRequired,
-  onClick: PropTypes.func.isRequired
+  onClick:   PropTypes.func.isRequired,
+  className: PropTypes.string
 }

@@ -19,15 +19,8 @@ const defaultState = {
 export default function users(state = defaultState, action) {
   switch (action.type) {
     case ADD_USER: {
-      const { value } = action
+      const { id, value } = action
       const { byId, allIds } = state
-
-      // id of new record would be normally provided by backend
-      // I would extract it like so:
-      // const { value: {id, userDetails} } = action
-      const id = allIds.length
-        ? Math.max(...allIds) + 1
-        : 1
 
       return {
         ...state,
@@ -42,7 +35,13 @@ export default function users(state = defaultState, action) {
 
       return {
         ...state,
-        byId: { ...byId, [id]: value }
+        byId: {
+          ...byId,
+          [id]: {
+            id,
+            ...value
+          }
+        }
       }
     }
 
