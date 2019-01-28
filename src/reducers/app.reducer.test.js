@@ -4,6 +4,12 @@ import {
   EDIT_USER,
   SELECT_USER
 }  from '../actions/app.actions'
+import {
+  REMOVE_USER,
+  ADD_USER,
+  UPDATE_USER
+} from '../actions/users.actions'
+
 
 describe('app reducer', () => {
   it('should return the initial state', () => {
@@ -74,4 +80,54 @@ describe('app reducer', () => {
       }
     )
   })
+})
+
+it('should handle REMOVE_USER', () => {
+  expect(reducer(
+    {
+      selected: 120,
+      editing:  true
+    },
+    {
+      type: REMOVE_USER
+    }
+  )).toEqual(
+    {
+      selected: null,
+      editing:  false
+    }
+  )
+})
+
+it('should handle ADD_USER and UPDATE_USER', () => {
+  const initialState = {
+    selected: null,
+    editing:  true
+  }
+
+  expect(reducer(
+    initialState,
+    {
+      type: ADD_USER,
+      id:   110
+    }
+  )).toEqual(
+    {
+      selected: 110,
+      editing:  false
+    }
+  )
+
+  expect(reducer(
+    initialState,
+    {
+      type: UPDATE_USER,
+      id:   110
+    }
+  )).toEqual(
+    {
+      selected: 110,
+      editing:  false
+    }
+  )
 })

@@ -34,11 +34,6 @@ module.exports = {
       },
       {
         test: /\.(sa|sc|c)ss$/,
-        // use: [
-        //   devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
-        //   'css-loader',
-        //   'sass-loader',
-        // ],
         use:  [
           { loader: MiniCssExtractPlugin.loader },
           {
@@ -52,26 +47,6 @@ module.exports = {
           { loader: 'sass-loader' }
         ]
       }
-      // {
-      //   test: /\.(scss|css)$/,
-      //   use:  ExtractTextPlugin.extract(
-      //     {
-      //       fallback: { loader: 'style-loader' },
-      //       use:      [
-      //         {
-      //           loader:  'css-loader',
-      //           options: {
-      //             sourceMap:      true,
-      //             modules:        true,
-      //             importLoaders:  1,
-      //             localIdentName: '[name]__[local]__[hash:base64:5]'
-      //           }
-      //         },
-      //         { loader: 'sass-loader' }
-      //       ]
-      //     }
-      //   )
-      // }
     ]
   }
 }

@@ -24,8 +24,13 @@
     &.visible {
       color: $contactFontGray;
     }
+
+    &.invalid {
+      color: $red; 
+    }
     
     &.hidden {
+      @include not-selectable();
       color: transparent;
     }
   }

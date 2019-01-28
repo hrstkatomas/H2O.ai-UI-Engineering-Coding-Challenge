@@ -7,19 +7,21 @@ export default function WithLabel(WrappedComponent) {
   return class extends Component {
     static propTypes = {
       label: PropTypes.string.isRequired,
-      edit:  PropTypes.bool.isRequired
+      edit:  PropTypes.bool.isRequired,
+      valid: PropTypes.bool.isRequired
     }
 
     render() {
-      const { label, edit } = this.props
+      const { label, edit, valid } = this.props
       return (
         <div className={styles.withLabel}>
           <WrappedComponent {...this.props} />
 
-          <div 
+          <div
             className={`
               ${styles.label}
               ${edit ? styles.visible : styles.hidden}
+              ${!valid && styles.invalid}
             `}
           >
             {label}

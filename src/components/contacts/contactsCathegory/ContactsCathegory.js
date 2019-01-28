@@ -2,11 +2,11 @@ import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 
 import TitledSegment
-  from '../PCs/titledSegment/TitledSegment'
-import List from '../PCs/list/List'
-import ListItem from '../PCs/listItem/ListItem'
+  from '../../PCs/titledSegment/TitledSegment'
+import List from '../../PCs/list/List'
+import ListItem from '../../PCs/listItem/ListItem'
 import RemoveButton
-  from '../PCs/buttons/removeButton/RemoveButton'
+  from '../../PCs/buttons/removeButton/RemoveButton'
 
 import styles from './ContactsCathegory.scss'
 
@@ -17,8 +17,11 @@ export default class ContactsCathegory extends PureComponent {
     contacts:     PropTypes.array.isRequired,
     onUserClick:  PropTypes.func.isRequired,
     removeUser:   PropTypes.func,
-    selectedUser: PropTypes.number,
-    editing:      PropTypes.bool
+    editing:      PropTypes.bool,
+    selectedUser: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.number
+    ])
   }
 
   createRemoveButton = ({ id }) => {

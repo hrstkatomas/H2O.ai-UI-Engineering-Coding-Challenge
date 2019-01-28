@@ -1,10 +1,6 @@
 @import '../../_styles/variables';
 
-$sides-paddinng: 4em;
-$bottom-padding: 1em;
-
 .detail {
-  // width: 100%;
   padding: $topPadding $sides-paddinng $bottom-padding;
 
   position: relative;

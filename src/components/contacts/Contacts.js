@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 
 import ContactsCathegory
-  from '../contactsCathegory/ContactsCathegory'
+  from './contactsCathegory/ContactsCathegory'
 
 import { selectUser } from '../../actions/app.actions'
 import { removeUser } from '../../actions/users.actions'
@@ -16,8 +16,11 @@ class Contacts extends Component {
     cathegories:  PropTypes.object,
     selectUser:   PropTypes.func,
     removeUser:   PropTypes.func,
-    selectedUser: PropTypes.number,
-    editing:      PropTypes.bool
+    editing:      PropTypes.bool,
+    selectedUser: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.number
+    ])
   }
 
   render() {
@@ -58,8 +61,8 @@ const mapStateToProps = state => {
   const {
     app: {
       selected: selectedUser,
-      editing 
-}
+      editing
+    }
   } = state
   const users = Object.values(byId)
 
